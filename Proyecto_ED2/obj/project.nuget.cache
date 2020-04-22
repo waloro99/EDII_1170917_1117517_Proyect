@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "sYlHOBqF8zWg+JfmomgDxeKFq94X42ecapk3LRYGu2K4cobWP+oYtdr6L1iL2y6FqB8byQv8+GdPFB3rUlNJyw==",
+  "success": true,
+  "projectFilePath": "D:\\Universidad\\1er ciclo 2020\\EstructuraII\\Proyecto\\EDII_1170917_1117517_Proyect\\Proyecto_ED2\\Proyecto_ED2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\majoj\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\majoj\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\majoj\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\majoj\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
