@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Proyecto_ED2.Controllers
 {
@@ -11,29 +13,105 @@ namespace Proyecto_ED2.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public static IWebHostEnvironment _environment;
+
+        public WeatherForecastController(IWebHostEnvironment environment)
         {
-            _logger = logger;
+            _environment = environment;
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        //object file
+        public class FileUploadAPI
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            public IFormFile files { get; set; } //name use in postman --> files
+
         }
+
+
+        //-------------------------------------------- END POINTS --------------------------------------------------
+
+        //------------------------------------------- Agregar sucursal ---------------------------------------------
+
+        // localhost:51626/weatherforecast/Add/Sucursal/?Cifrado=caesar
+        [HttpPost("Add/Sucursal", Name = "PostAddSucursal")]
+        public async Task<string> Post()
+        {
+            try
+            {
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message.ToString();
+            }
+        }
+
+        //--------------------------------- Actualizar los datos de una sucursal ------------------------------------
+
+        //---------------------------------- Agregar un producto ----------------------------------------------------
+
+        // localhost:51626/weatherforecast/Add/Producto/?Cifrado=caesar
+        [HttpPost("Add/Producto", Name = "PostAddProduct")]
+        public async Task<string> Post(string x)
+        {
+            try
+            {
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message.ToString();
+            }
+        }
+
+        //-------------------------- Agregar múltiples productos (vía un archivo .csv) --------------------------------
+
+        // localhost:51626/weatherforecast/Add/Producto/CSV/?Cifrado=caesar
+        [HttpPost("Add/Producto/CSV", Name = "PostAddProductMil")]
+        public async Task<string> Post(string x,int z)
+        {
+            try
+            {
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message.ToString();
+            }
+        }
+
+        //-------------------------------- Actualizar los datos de un producto -----------------------------------------
+
+        //----------------------------- Transferir unidades de una sucursal a otra -------------------------------------
+
+        //---------------------------------- Agregar un producto a una sucursal ----------------------------------------
+
+        // localhost:51626/weatherforecast/Add/ProductoPrecio/?Cifrado=caesar
+        [HttpPost("Add/ProductoPrecio", Name = "PostAddProductPrecio")]
+        public async Task<string> Post(string x, int z,bool t)
+        {
+            try
+            {
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message.ToString();
+            }
+        }
+
+        //-------------------------- Actualizar cantidad en inventario en la sucursal ---------------------------------
+
+
+
+
+
+
     }
 }

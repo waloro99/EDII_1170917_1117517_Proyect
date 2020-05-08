@@ -35,6 +35,11 @@ namespace Proyecto_ED2
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
+    
 
             app.UseHttpsRedirection();
 
@@ -46,6 +51,12 @@ namespace Proyecto_ED2
             {
                 endpoints.MapControllers();
             });
+
+            app.Run(async (context) => {
+                await context.Response.WriteAsync("Could not Find Anything");
+            });
+
+
         }
     }
 }
