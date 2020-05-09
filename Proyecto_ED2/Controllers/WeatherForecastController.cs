@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Hosting;
 using Proyecto_ED2.Repository;
 using Proyecto_ED2.BD;
+using System.IO;
 
 namespace Proyecto_ED2.Controllers
 {
@@ -154,13 +155,35 @@ namespace Proyecto_ED2.Controllers
 
         #region AGREGAR MULTIPLES PRODUCTOS
 
-        // localhost:51626/weatherforecast/Add/Producto/CSV/?Cifrado=caesar
+        // localhost:51626/weatherforecast/Add/Producto/CSV
         [HttpPost("Add/Producto/CSV", Name = "PostAddProductMil")]
-        public async Task<string> Post(string x,int z)
+        public async Task<string> Post([FromForm]FileUploadAPI objFile)
         {
             try
             {
-                return "OK";
+                if (objFile.files.Length > 0)
+                {
+                    if (!Directory.Exists(_environment.WebRootPath + "\\Upload\\"))
+                    {
+                        Directory.CreateDirectory(_environment.WebRootPath + "\\Upload\\");
+                    }
+                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName))
+                    {
+                        objFile.files.CopyTo(fileStream);
+                        fileStream.Flush();
+                        fileStream.Close();
+                        string name = objFile.files.FileName.ToString();
+                        string NewPath = _environment.WebRootPath + "\\Upload\\" + name;
+
+
+
+                        return "CSV with successful";
+                    }
+                }
+                else
+                {
+                    return "Failed";
+                }
             }
             catch (Exception ex)
             {
@@ -170,7 +193,7 @@ namespace Proyecto_ED2.Controllers
         }
 
         #endregion
-        //no tested
+      
         //-------------------------------- Actualizar los datos de un producto -----------------------------------------
 
         #region ACTUALIZAR PRODUCTO
@@ -213,8 +236,10 @@ namespace Proyecto_ED2.Controllers
 
         #region TRASNFERIR UNIDADES
 
+
+
         #endregion
-            //no tested
+          //no tested
 
         //---------------------------------- Agregar un producto a una sucursal ----------------------------------------
 
@@ -296,21 +321,75 @@ namespace Proyecto_ED2.Controllers
 
         #region VISUALIZAR SUCURSAL
 
+        // localhost:51626/weatherforecast/Sucursal/?Search=""
+        [HttpGet("Sucursal", Name = "GetSucursal")]
+        /*[Route("weatherforecast/Sodas/")]*/
+        public IEnumerable<Sucursal> Get(string Search)
+        {
+            if (Search == null)
+            {
+                return SDataBase.ViewSucursal();
+            }
+            else
+            {
+                List<Sucursal> Sucursal = new List<Sucursal>();
+                //sucursal
+                return Sucursal;
+            }
+         
+        }
+
         #endregion
-        //NO TESTED
+
         //------------------------------------- Visualizar Producto ---------------------------------------------------
 
         #region VISUALIZAR PRODUCTO
 
+        // localhost:51626/weatherforecast/Producto/?Search=""
+        [HttpGet("Producto", Name = "GetProduct")]
+        /*[Route("weatherforecast/Sodas/")]*/
+        public IEnumerable<Producto> Get(string Search,int x)
+        {
+            if (Search == null)
+            {
+                return SDataBase.ViewProduct();
+            }
+            else
+            {
+                List<Producto> Producto = new List<Producto>();
+                //sucursal
+                return Producto;
+            }
+
+        }
+
         #endregion
-        //no tested
+
         //------------------------------------- Visualizar Producto Sucursal -----------------------------------------
 
         #region VISUALIZAR PRODUCTO EN SUCURSAL
 
+        // localhost:51626/weatherforecast/ProductoSucursal/?Search=""
+        [HttpGet("ProductoSucursal", Name = "GetSucursal")]
+        /*[Route("weatherforecast/Sodas/")]*/
+        public IEnumerable<SucursalPrecio> Get(string Search,bool x)
+        {
+            if (Search == null)
+            {
+                return SDataBase.ViewProductSucursal();
+            }
+            else
+            {
+                List<SucursalPrecio> SucursalPrecio = new List<SucursalPrecio>();
+                //sucursal
+                return SucursalPrecio;
+            }
+
+        }
+
         #endregion
 
-        //no tested
+        
 
     }
 }

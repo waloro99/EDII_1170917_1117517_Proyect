@@ -44,5 +44,27 @@ namespace Proyecto_ED2.Repository
         {
             //code update producto in sucursal at the tree B
         }
+
+        //method for view sucursal
+        public List<Sucursal> ViewSucursal()
+        {
+            //code view sucursal at the tree B
+            return null;
+        }
+
+        //method for view product
+        public List<Producto> ViewProduct()
+        {
+            //code view producto  at the tree B
+            return null;
+        }
+
+        //method for view product in sucursal
+        public List<SucursalPrecio> ViewProductSucursal()
+        {
+            //code view product in sucursal at the tree B
+            return null;
+        }
+
     }
 }
