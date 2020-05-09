@@ -27,5 +27,16 @@ namespace Proyecto_ED2.Repository
         //Update Producto in Sucursal
         void UpdateProductoSucursal(SucursalPrecio sucursalPrecio);
 
+        //View sucursal
+        List<Sucursal> ViewSucursal();
+
+        //View Product
+        List<Producto> ViewProduct( );
+
+        //View producto in sucursal
+        List<SucursalPrecio> ViewProductSucursal( );
+
+
+
     }
 }
