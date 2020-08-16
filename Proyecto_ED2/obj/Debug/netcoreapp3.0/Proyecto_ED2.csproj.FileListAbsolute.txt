@@ -1,0 +1,6 @@
+C:\Users\walte\OneDrive\Documentos\papucho\2020\7mo Ciclo\Estructuras II\Repositorio EstrucII\ProyectED2\EDII_1170917_1117517_Proyect\Proyecto_ED2\obj\Debug\netcoreapp3.0\Proyecto_ED2.csprojAssemblyReference.cache
+C:\Users\walte\OneDrive\Documentos\papucho\2020\7mo Ciclo\Estructuras II\Repositorio EstrucII\ProyectED2\EDII_1170917_1117517_Proyect\Proyecto_ED2\obj\Debug\netcoreapp3.0\staticwebassets\Proyecto_ED2.StaticWebAssets.Manifest.cache
+C:\Users\walte\OneDrive\Documentos\papucho\2020\7mo Ciclo\Estructuras II\Repositorio EstrucII\ProyectED2\EDII_1170917_1117517_Proyect\Proyecto_ED2\obj\Debug\netcoreapp3.0\staticwebassets\Proyecto_ED2.StaticWebAssets.xml
+C:\Users\walte\OneDrive\Documentos\papucho\2020\7mo Ciclo\Estructuras II\Repositorio EstrucII\ProyectED2\EDII_1170917_1117517_Proyect\Proyecto_ED2\obj\Debug\netcoreapp3.0\Proyecto_ED2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\walte\OneDrive\Documentos\papucho\2020\7mo Ciclo\Estructuras II\Repositorio EstrucII\ProyectED2\EDII_1170917_1117517_Proyect\Proyecto_ED2\obj\Debug\netcoreapp3.0\Proyecto_ED2.AssemblyInfoInputs.cache
+C:\Users\walte\OneDrive\Documentos\papucho\2020\7mo Ciclo\Estructuras II\Repositorio EstrucII\ProyectED2\EDII_1170917_1117517_Proyect\Proyecto_ED2\obj\Debug\netcoreapp3.0\Proyecto_ED2.AssemblyInfo.cs
